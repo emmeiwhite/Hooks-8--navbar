@@ -55,6 +55,7 @@ a {
 @media screen and (min-width: 800px) {
   .links-container {
     display: flex;
+    height: auto !important; /* --- Gocha resolved !--- */
   }
   .social-icons,
   .links-list {
