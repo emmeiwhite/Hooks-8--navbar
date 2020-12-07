@@ -1,0 +1,68 @@
+/* --- Global Styles --- */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 1rem 0;
+  transition: all 0.4s ease;
+}
+li:hover {
+  background-color: rgb(3, 175, 118);
+  color: #fff;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: rgb(46, 37, 37);
+  text-transform: capitalize;
+}
+
+/* --- Mobile First Approcah --- */
+.section {
+  max-width: 95vw;
+  margin: 0 auto;
+}
+.social-icons {
+  display: none;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 800px) {
+  .links-container {
+    display: flex;
+  }
+  .social-icons,
+  .links-list {
+    display: flex;
+    align-items: center;
+  }
+  .fa-bars {
+    display: none;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .links-list {
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    margin: 0;
+    transition: all 0.4s ease;
+    margin-left: 1.5rem;
+  }
+  li:hover {
+    padding: 0rem;
+    cursor: pointer;
+  }
+}
