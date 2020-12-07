@@ -17,18 +17,21 @@ const Navbar = () => {
         />
       </div>
 
-      <div className="links-container show-container">
-        <ul className="links-list">
-          {links.map((link) => {
-            const { id, url, text } = link;
-            return (
-              <li key={id}>
-                <a href={url}>{text}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      {isFaBarsClick && (
+        <div className="links-container show-container">
+          <ul className="links-list">
+            {links.map((link) => {
+              const { id, url, text } = link;
+              return (
+                <li key={id}>
+                  <a href={url}>{text}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+
       <ul className="social-icons">
         {social.map((link) => {
           const { id, url, icon } = link;

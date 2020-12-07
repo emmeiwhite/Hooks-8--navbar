@@ -22,7 +22,7 @@ a {
 
 /* --- Mobile First Approcah --- */
 .section {
-  max-width: 95vw;
+  max-width: 90vw;
   margin: 0 auto;
 }
 .social-icons {
@@ -32,6 +32,17 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.fa-bars {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.fa-bars:hover {
+  transform: rotate(90deg);
+}
+.links-container {
+  background-color: #ccc;
 }
 
 @media screen and (min-width: 800px) {
