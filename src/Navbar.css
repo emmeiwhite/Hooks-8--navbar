@@ -46,6 +46,7 @@ a {
   height: 0;
   overflow: hidden;
   transition: height 0.4s ease-in;
+  background-color: azure;
 }
 
 .show-container {

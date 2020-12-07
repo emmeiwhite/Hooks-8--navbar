@@ -5,7 +5,21 @@ import { ReactComponent as Logo } from "./logo.svg";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [isFaBarsClick, setIsFaBarsClicked] = useState(false);
+  const [isFaBarsClicked, setIsFaBarsClicked] = useState(false);
+  const linksContainerRef = useRef(null);
+  const linksRef = useRef(null);
+
+  // Everytime isFarBarsClicked changes, we'll run our callback function
+  // Essentially we'll use the height of the links not the linksContainer to get the overall height of the container itself
+
+  useEffect(() => {
+    const linksHeight = linksRef.current.getBoundingClientRect().height;
+    if (isFaBarsClicked) {
+      linksContainerRef.current.style.height = `${linksHeight}px`;
+    } else {
+      linksContainerRef.current.style.height = `0px`;
+    }
+  }, [isFaBarsClicked]);
 
   return (
     <nav className="nav-wrapper">
@@ -13,16 +27,12 @@ const Navbar = () => {
         <Logo />
         <FaBars
           className="fa-bars"
-          onClick={() => setIsFaBarsClicked(!isFaBarsClick)}
+          onClick={() => setIsFaBarsClicked(!isFaBarsClicked)}
         />
       </div>
 
-      <div
-        className={`${
-          isFaBarsClick ? "links-container show-container" : "links-container"
-        }`}
-      >
-        <ul className="links-list">
+      <div className="links-container" ref={linksContainerRef}>
+        <ul className="links-list" ref={linksRef}>
           {links.map((link) => {
             const { id, url, text } = link;
             return (
